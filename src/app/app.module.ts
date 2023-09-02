@@ -6,15 +6,37 @@ import { AppComponent } from './app.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
+import { HomeComponent } from './components/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
+import { NavigationItemsComponent } from './components/navigation-items/navigation-items.component';
+import { CommonModule } from '@angular/common';
+import { SampleEventComponent } from './components/sample-event/sample-event.component';
+import { MandvoComponent } from './components/mandvo/mandvo.component';
+import { RemoveAfterDirective } from './directives/remove-after.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     EventListComponent,
-    AddEventComponent
+    AddEventComponent,
+    HomeComponent,
+    NavigationItemsComponent,
+    SampleEventComponent,
+    MandvoComponent,
+    RemoveAfterDirective,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    BrowserAnimationsModule, // for firestore
   ],
   providers: [],
   bootstrap: [AppComponent]

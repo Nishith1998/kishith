@@ -1,0 +1,19 @@
+<div class="flex flex-col justify-between">
+    <iframe class="p-4" src="https://www.youtube.com/embed/VGjvZRerP58"
+        title="Tere Vaaste | Lyrical | Zara Hatke Zara Bachke | Vicky, Sara Ali K, Varun J, Sachin-Jigar, Amitabh B"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<div>
+    <div class="grid grid-cols-3 gap-2 p-4">
+        <!-- (click)="handleEventClick(item.routePath)" -->
+        <div *ngFor="let item of eventList" @staggerRight
+            [routerLink]="item.routePath"
+            class="hover:animate-pulse rounded-md bg-gradient-to-bl from-blue-200 to-blue-600 p-4 h-20">
+            {{item.label}}
+        </div>
+    </div>
+</div>
