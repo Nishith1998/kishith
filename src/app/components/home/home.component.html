@@ -8,12 +8,13 @@
 </div>
 
 <div>
-    <div class="grid grid-cols-3 gap-2 p-4">
+    <div class="grid grid-cols-2 gap-2 p-4">
         <!-- (click)="handleEventClick(item.routePath)" -->
         <div *ngFor="let item of eventList" @staggerRight
             [routerLink]="item.routePath"
-            class="hover:animate-pulse rounded-md bg-gradient-to-bl from-blue-200 to-blue-600 p-4 h-20">
+            class="relative hover:animate-pulse rounded-md bg-gradient-to-bl from-blue-200 to-blue-600 p-4 h-20">
             {{item.label}}
+            <div class="absolute top-0 right-0 bottom-0 w-20 h-20 rotate-4 bg-cover bg-no-repeat bg-center" style="background-image: url('assets/sanjiDhol-removebg-preview.svg');"></div>
         </div>
     </div>
 </div>

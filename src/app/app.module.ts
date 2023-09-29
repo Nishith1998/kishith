@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { SampleEventComponent } from './components/sample-event/sample-event.component';
 import { MandvoComponent } from './components/mandvo/mandvo.component';
 import { RemoveAfterDirective } from './directives/remove-after.directive';
+import { ShowAfterDirective } from './directives/show-after.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RemoveAfterDirective } from './directives/remove-after.directive';
     SampleEventComponent,
     MandvoComponent,
     RemoveAfterDirective,
+    ShowAfterDirective,
   ],
   imports: [
     CommonModule,

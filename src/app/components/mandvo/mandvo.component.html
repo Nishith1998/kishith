@@ -1,9 +1,30 @@
-<div [removeAfter]="800" class="z-20 absolute top-0 left-0 w-screen h-screen bg-no-repeat bg-center bg-[url(https://media3.giphy.com/media/VcBrHW2DpQszCqtZPm/giphy.gif)]">
-
+<!-- <div [removeAfter]="2000"
+    class="z-20 absolute top-0 left-0 w-screen h-screen bg-no-repeat bg-center bg-[url(https://media3.giphy.com/media/VcBrHW2DpQszCqtZPm/giphy.gif)]">
+</div> -->
+<div
+    class="animated-container flex flex-col z-20 absolute top-0 left-0 w-screen h-screen justify-center items-center">
+    <img class="toran" src="assets/toran.png" />
+    <img [showAfter]="1000" class="ganesha w-2/4 h-2/4" src="assets/Ganesha.svg" />
+    <!-- <div [removeAfter]="2000" class="text-3xl">Mandap Ropan</div> -->
 </div>
 
-<div class="z-0 w-full h-full backdrop-brightness-90">
-    <mat-card>
-        asdf
-    </mat-card>
+<div [showAfter]="4000" class="z-20 w-full h-full absolute flex justify-center items-center">
+    <div class="block text-white max-w-sm p-6 bg-transparent backdrop-brightness-50 border border-gray-200 rounded-lg shadow backdrop-blur-sm">
+        <div class="text-xl text-center">Mandap Ropan</div>
+        <div class="text-lg flex flex-col">
+            <div class="text-center">Date</div>
+            <div class="text-center">6th December, 2023</div>
+        </div>
+        <hr/>
+        <div class="text-lg flex flex-col">
+            <div class="text-center">Time</div>
+            <div class="text-center">6:00 pm</div>
+        </div>
+        <hr/>
+        <div class="text-lg flex flex-col">
+            <div class="text-center">Venue</div>
+            <div class="text-center">ABC, xyz, 123</div>
+        </div>
+    </div>
 </div>
+
