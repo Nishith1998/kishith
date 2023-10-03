@@ -12,9 +12,10 @@
         <!-- (click)="handleEventClick(item.routePath)" -->
         <div *ngFor="let item of eventList" @staggerRight
             [routerLink]="item.routePath"
-            class="relative hover:animate-pulse rounded-md bg-gradient-to-bl from-blue-200 to-blue-600 p-4 h-20">
+            class="relative hover:animate-pulse rounded-md bg-cover bg-no-repeat bg-center bg-gradient-to-bl from-blue-200 to-blue-600  p-4 h-20" style="background-image: url({{item.backgroundImage}})"> <!-- bg-gradient-to-bl from-blue-200 to-blue-600-->
             {{item.label}}
-            <div class="absolute top-0 right-0 bottom-0 w-20 h-20 rotate-4 bg-cover bg-no-repeat bg-center" style="background-image: url('assets/sanjiDhol-removebg-preview.svg');"></div>
+            <!-- <img class="" [src]="item.svgPath"> -->
+            <div class="{{item.width ? item.width : ''}} absolute top-0 right-0 bottom-0 w-12 h-20 rotate-4 bg-cover bg-no-repeat bg-center" style="background-image: url({{item.svgPath}});"></div>
         </div>
     </div>
 </div>
