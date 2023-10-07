@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
-import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
 
 @Component({
-  selector: 'app-mandvo',
-  templateUrl: './mandvo.component.html',
-  styleUrls: ['./mandvo.component.scss'],
+  selector: 'app-sanji',
+  templateUrl: './sanji.component.html',
+  styleUrls: ['./sanji.component.scss'],
   animations: [fadeInAnimation, staggerRightAnimation],
 })
-export class MandvoComponent implements OnInit {
-  imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
+export class SanjiComponent implements OnInit {
+
+  constructor() { }
+
+  // imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
   ngOnInit() {
     const ourText = new SplitType('div.text-3xl', { types: 'chars' });
     const chars = ourText.chars;
@@ -62,4 +64,5 @@ export class MandvoComponent implements OnInit {
       );
     }, 2000);
   }
+
 }

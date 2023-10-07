@@ -18,6 +18,11 @@ import { SampleEventComponent } from './components/sample-event/sample-event.com
 import { MandvoComponent } from './components/mandvo/mandvo.component';
 import { RemoveAfterDirective } from './directives/remove-after.directive';
 import { ShowAfterDirective } from './directives/show-after.directive';
+import { SanjiComponent } from 'src/app/components/sanji/sanji.component';
+import { MameraComponent } from './components/mamera/mamera.component';
+import { PerformanceNightComponent } from './components/performance-night/performance-night.component';
+import { DandiyaComponent } from './components/dandiya/dandiya.component';
+import { MarriageComponent } from './components/marriage/marriage.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { ShowAfterDirective } from './directives/show-after.directive';
     MandvoComponent,
     RemoveAfterDirective,
     ShowAfterDirective,
+    SanjiComponent,
+    MameraComponent,
+    PerformanceNightComponent,
+    DandiyaComponent,
+    MarriageComponent
   ],
   imports: [
     CommonModule,
