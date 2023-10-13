@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MessagingService } from 'src/app/services/messaging.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kishith';
+  message: any;
+
+  constructor(private fcmService: MessagingService) {}
+
+  ngOnInit() {
+    // requestFcmPermission() {
+      // this.fcmService.requestPermission();
+    // }
+  }
+
+  // requestFcmPermission() {
+  //   this.fcmService.requestPermission();
+  // }
 }

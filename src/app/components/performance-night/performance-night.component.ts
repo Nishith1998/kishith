@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import SplitType from 'split-type';
 import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
+import gsap from "gsap";
 
 @Component({
   selector: 'app-performance-night',

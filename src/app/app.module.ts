@@ -23,6 +23,12 @@ import { MameraComponent } from './components/mamera/mamera.component';
 import { PerformanceNightComponent } from './components/performance-night/performance-night.component';
 import { DandiyaComponent } from './components/dandiya/dandiya.component';
 import { MarriageComponent } from './components/marriage/marriage.component';
+import { EveryPipe } from './pipes/every.pipe';
+import { MessagingModule } from '@angular/fire/messaging';
+import { initializeApp } from 'firebase/app';
+
+// AngularFireModule.initializeApp(environment.firebase);
+const app = initializeApp(environment.firebase);
 
 @NgModule({
   declarations: [
@@ -39,7 +45,8 @@ import { MarriageComponent } from './components/marriage/marriage.component';
     MameraComponent,
     PerformanceNightComponent,
     DandiyaComponent,
-    MarriageComponent
+    MarriageComponent,
+    EveryPipe
   ],
   imports: [
     CommonModule,
@@ -48,6 +55,7 @@ import { MarriageComponent } from './components/marriage/marriage.component';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    MessagingModule,
     BrowserAnimationsModule, // for firestore
   ],
   providers: [],
