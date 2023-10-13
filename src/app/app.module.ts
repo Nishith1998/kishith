@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +26,7 @@ import { MarriageComponent } from './components/marriage/marriage.component';
 import { EveryPipe } from './pipes/every.pipe';
 import { MessagingModule } from '@angular/fire/messaging';
 import { initializeApp } from 'firebase/app';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 // AngularFireModule.initializeApp(environment.firebase);
 const app = initializeApp(environment.firebase);
@@ -56,7 +57,13 @@ const app = initializeApp(environment.firebase);
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MessagingModule,
-    BrowserAnimationsModule, // for firestore
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }), // for firestore
   ],
   providers: [],
   bootstrap: [AppComponent]
