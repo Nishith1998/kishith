@@ -14,7 +14,7 @@ export class AppComponent {
   // beforeInstallPrompt$!: Observable<any>;
   // flag: boolean = true;
 
-  constructor() {}
+  constructor(private fcmService: MessagingService) {}
 
   ngOnInit() {
     // this.installButton = document.getElementById('install-button');
