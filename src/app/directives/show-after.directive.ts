@@ -23,6 +23,19 @@ export class ShowAfterDirective implements OnInit {
       }, this.delay);
   }
 
+  // ngOnChanges(change: any) {
+  //   console.log("change: ", change);
+
+  // }
+
+  // ngAfterViewInit() {
+  //   console.log("viewInit")
+  //   this.renderer.listen('.mat-mdc-tab', 'click', () => {
+  //     // Trigger the GSAP animation when the tab is clicked
+  //     this.applyAnimations(this.animations);
+  //   });
+  // }
+
   applyAnimations(animationType: string) {
     switch(animationType) {
       case 'fadeInLeftToRight':

@@ -1,14 +1,29 @@
-
+<!-- 
 <div
-    class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen overflow-hidden">
-    <!-- <div class="relative justify-center items-center"> -->
-        <!-- asdf -->
-        <!-- <img class="absolute z-10" [showAfter]="0" src="https://media.canva.com/1/image-resize/1/571_437_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS85NnFaMC9NQUZ3eG45NnFaMC8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAH0C7_X9JDtoXthEndodOle-D15Cq0R3LuuhvV933H0z&exp=1697046043&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAABDMyvj8ANBWbTblFIGbSPaVcw9-R4BW5dYRAKUmGM9v -->
-        <!-- " /> -->
-        <!-- <img class="absolute z-0" [showAfter]="0" src="https://i.pinimg.com/736x/0c/a9/7e/0ca97eaa6fefe8912ae0b7e532f5fcb6.jpg" /> -->
-    <!-- </div> -->
-    <img [showAfter]="1000" [animations]="'fadeInRightToLeft'" src="assets/marriage.png">
-    <!-- <img alt="couple" class="z-10 bottom-0 right-0 w-full" src="https://media.canva.com/1/image-resize/1/571_437_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS85NnFaMC9NQUZ3eG45NnFaMC8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAH0C7_X9JDtoXthEndodOle-D15Cq0R3LuuhvV933H0z&exp=1697046043&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAABDMyvj8ANBWbTblFIGbSPaVcw9-R4BW5dYRAKUmGM9v"/> -->
-    <!-- <img alt="mandap" class="z-0 fixed inset-0 w-full h-full object-cover" src="https://i.pinimg.com/736x/0c/a9/7e/0ca97eaa6fefe8912ae0b7e532f5fcb6.jpg"/> -->
-</div>
+    class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen"
+    > -->
+<!-- <div class="relative justify-center items-center"> -->
+<!-- asdf -->
+<!-- <img class="absolute z-10" [showAfter]="0" src="https://media.canva.com/1/image-resize/1/571_437_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS85NnFaMC9NQUZ3eG45NnFaMC8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAH0C7_X9JDtoXthEndodOle-D15Cq0R3LuuhvV933H0z&exp=1697046043&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAABDMyvj8ANBWbTblFIGbSPaVcw9-R4BW5dYRAKUmGM9v -->
+<!-- " /> -->
+<!-- <img class="absolute z-0" [showAfter]="0" src="https://i.pinimg.com/736x/0c/a9/7e/0ca97eaa6fefe8912ae0b7e532f5fcb6.jpg" /> -->
+<!-- </div> -->
 
+<!-- <img alt="couple" class="z-10 bottom-0 right-0 w-full" src="https://media.canva.com/1/image-resize/1/571_437_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS85NnFaMC9NQUZ3eG45NnFaMC8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAH0C7_X9JDtoXthEndodOle-D15Cq0R3LuuhvV933H0z&exp=1697046043&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAABDMyvj8ANBWbTblFIGbSPaVcw9-R4BW5dYRAKUmGM9v"/> -->
+<!-- <img alt="mandap" class="z-0 fixed inset-0 w-full h-full object-cover" src="https://i.pinimg.com/736x/0c/a9/7e/0ca97eaa6fefe8912ae0b7e532f5fcb6.jpg"/> -->
+<mat-tab-group (selectedTabChange)="onTabChange($event)" preserveContent="true" animationDuration="500"
+    class="absolute bottom-0" headerPosition="below" mat-stretch-tabs="true" mat-align-tabs="center">
+    <mat-tab label="Function">
+        <div
+            class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
+            <img [showAfter]="showAfterTime" [animations]="animationType" src="assets/marriage.png">
+        </div>
+    </mat-tab>
+    <mat-tab label="Food">
+        <div
+            class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
+            <img [showAfter]="showAfterTime" [animations]="animationType" src="assets/food.png">
+        </div>
+    </mat-tab>
+</mat-tab-group>
+<!-- </div> -->

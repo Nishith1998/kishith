@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
+import { BLUR_AFTER_TIME, EVENT_INFO_TEMPLATE_TIME, EventName, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
+import { MainEventsService } from 'src/app/services/main-events.service';
 
 @Component({
   selector: 'app-sanji',
@@ -7,12 +9,22 @@ import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
   styleUrls: ['./sanji.component.scss'],
   animations: [fadeInAnimation, staggerRightAnimation],
 })
-export class SanjiComponent implements OnInit {
+export class SanjiComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private eventService: MainEventsService) { }
 
   // imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
+  showAfterTime = SHOW_AFTER_TIME;
   ngOnInit() {
+    setTimeout(() => {
+      this.eventService.eventDetails$.next(EventName.sanji);
+    }, EVENT_INFO_TEMPLATE_TIME);
+    
+    blurAfter(BLUR_AFTER_TIME);
+  }
+
+  ngOnDestroy() {
+    this.eventService.eventDetails$.next(null);
   }
 
 }

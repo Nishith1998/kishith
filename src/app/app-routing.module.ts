@@ -8,6 +8,8 @@ import { MameraComponent } from 'src/app/components/mamera/mamera.component';
 import { MarriageComponent } from 'src/app/components/marriage/marriage.component';
 import { DandiyaComponent } from 'src/app/components/dandiya/dandiya.component';
 import { PerformanceNightComponent } from 'src/app/components/performance-night/performance-night.component';
+import { BrideComponent } from 'src/app/components/bride/bride.component';
+import { GroomComponent } from 'src/app/components/groom/groom.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,12 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'bride', component: BrideComponent
+  },
+  {
+    path: 'groom', component: GroomComponent
   },
   {
     path: 'mandapRopan', component: MandvoComponent

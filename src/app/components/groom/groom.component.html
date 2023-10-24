@@ -1,0 +1,48 @@
+<mat-toolbar class="flex justify-center">
+    <span>Nishith</span>
+    <!-- <span class="nishith">Nishith</span> -->
+    <!-- <span class="kirti">Kirti</span> -->
+    <!-- <span class="kishith">Kishith</span> -->
+  </mat-toolbar>
+  <!-- <div *ngIf="message;">
+      <h1>{{ message.notification.title }}</h1>
+      <h2>{{ message.notification.body }}</h2>
+    </div>
+    <div *ngIf="!message;">
+      No Message Arrived
+    </div> -->
+  <!-- <div class="flex flex-col justify-between">
+      <iframe class="p-4" src="https://www.youtube.com/embed/VGjvZRerP58"
+          title="Tere Vaaste | Lyrical | Zara Hatke Zara Bachke | Vicky, Sara Ali K, Varun J, Sachin-Jigar, Amitabh B"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+      </iframe>
+  </div> -->
+  <div *ngIf="eventList | every">
+  Loading!!
+  </div>
+  <div class="flex flex-col justify-center items-center">
+      <div class="grid grid-cols-2 gap-2 p-4 w-full">
+          <!-- (click)="handleEventClick(item.routePath)" -->
+          <div *ngFor="let item of eventList" @staggerRight
+              [routerLink]="item.routePath"
+              class="relative hover:animate-pulse rounded-md bg-cover bg-no-repeat bg-center bg-gradient-to-bl from-blue-200 to-blue-600  p-4 h-20" style="background-image: url({{item.backgroundImage}})"> <!-- bg-gradient-to-bl from-blue-200 to-blue-600-->
+              {{item.label}}
+              <!-- <img class="" [src]="item.svgPath"> -->
+              <div class="{{item.width ? item.width : ''}} absolute top-0 right-0 bottom-0 w-12 h-20 flex items-center" >
+                  <img (load)="item.isLoading = false" [src]="item.svgPath" />
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="flex flex-col justify-between items-center p-4">
+      <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3688.3575024274064!2d70.83802957529589!3d22.415566179603882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDI0JzU2LjAiTiA3MMKwNTAnMjYuMiJF!5e0!3m2!1sen!2sin!4v1697900005148!5m2!1sen!2sin"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <!-- <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.9744785568937!2d70.84181777605967!3d22.42998638818068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b8444a312549%3A0x6ba4e31e790ff431!2sKhorana%2C%20Gujarat%20360003!5e0!3m2!1sen!2sin!4v1696943966664!5m2!1sen!2sin"
+          style="border:0;" allowfullscreen="false" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+  </div>

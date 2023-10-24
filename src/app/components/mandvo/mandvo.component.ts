@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
+import { BLUR_AFTER_TIME, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
 
 @Component({
   selector: 'app-mandvo',
@@ -10,6 +11,8 @@ import SplitType from 'split-type';
   animations: [fadeInAnimation, staggerRightAnimation],
 })
 export class MandvoComponent implements OnInit {
+  showAfterTime = SHOW_AFTER_TIME;
+
   imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
   ngOnInit() {
     const ourText = new SplitType('div.text-3xl', { types: 'chars' });
@@ -54,12 +57,13 @@ export class MandvoComponent implements OnInit {
         duration: 2,
       }
     );
-    setTimeout(() => {
-      gsap.fromTo(
-        '.animated-container',
-        { filter: 'blur(0px)' },
-        { filter: 'blur(3px)', duration: 2 }
-      );
-    }, 2000);
+    // setTimeout(() => {
+    //   gsap.fromTo(
+    //     '.animated-container',
+    //     { filter: 'blur(0px)' },
+    //     { filter: 'blur(3px)', duration: 2 }
+    //   );
+    // }, 2000);
+    blurAfter(BLUR_AFTER_TIME);
   }
 }

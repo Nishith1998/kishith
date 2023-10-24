@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [],
@@ -16,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatTreeModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule
   ],
 })
 export class MaterialModule {}

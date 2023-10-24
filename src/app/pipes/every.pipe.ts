@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { EventObj } from 'src/app/components/home/home.component';
+import { EventObj } from 'src/app/types';
 
 @Pipe({
   name: 'every',

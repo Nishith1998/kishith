@@ -1,10 +1,12 @@
 <div style="background-image: url('https://video-public.canva.com/VADhwTpAAI4/v/14cc84bfdd.gif');"
     class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
     <div class="flex items-center">
-        <img #leftPlayer class="leftPlayer w-36" [showAfter]="1000" [animations]="'fadeInLeftToRight'" src="https://media-public.canva.com/i90xs/MAFv3Bi90xs/1/tl.png" />
-        <img #rightPlayer class="rightPlayer w-36" [showAfter]="1000" [animations]="'fadeInRightToLeft'" src="https://media-public.canva.com/OgEJY/MAFv3MOgEJY/1/tl.png" />
+        <img #leftPlayer class="leftPlayer w-36" [showAfter]="showAfterTime" [animations]="'fadeInLeftToRight'"
+            src="https://media-public.canva.com/i90xs/MAFv3Bi90xs/1/tl.png" />
+        <img #rightPlayer class="rightPlayer w-36" [showAfter]="showAfterTime" [animations]="'fadeInRightToLeft'"
+            src="https://media-public.canva.com/OgEJY/MAFv3MOgEJY/1/tl.png" />
     </div>
-    
+
     <!-- <div class="flex items-end mt-auto gap-8">
         <img class="h-[7.5rem]" [showAfter]="0" src="https://media-public.canva.com/i90xs/MAFv3Bi90xs/1/tl.png" />
         <img class="h-24" [showAfter]="0" src="https://media-public.canva.com/jgVqY/MAFdzOjgVqY/1/tl.png" />

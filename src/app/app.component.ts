@@ -1,11 +1,13 @@
 import { Component, NgZone } from '@angular/core';
 import { Observable, filter, fromEvent, mergeMap, take } from 'rxjs';
+import { EVENT_INFO, EventName } from 'src/app/constants';
+import { MainEventsService } from 'src/app/services/main-events.service';
 import { MessagingService } from 'src/app/services/messaging.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'kishith';
@@ -14,9 +16,25 @@ export class AppComponent {
   // beforeInstallPrompt$!: Observable<any>;
   // flag: boolean = true;
 
-  constructor(private fcmService: MessagingService) {}
-
+  constructor(
+    private fcmService: MessagingService,
+    private eventService: MainEventsService
+  ) {}
+  eventName: string | null = null;
+  eventInfo!: any//{ [k: string]:  { name: string; time: string; venue: string; dressCode: string; } };
+  retureZero() {
+    return 0;
+  }
   ngOnInit() {
+    this.eventService.eventDetails$.subscribe((data) => {
+      if (data === null) {
+        this.eventName = null;
+      } else {
+        this.eventName = data;
+        this.eventInfo = EVENT_INFO[data];
+      }
+    });
+
     // this.installButton = document.getElementById('install-button');
     // this.beforeInstallPrompt$ = fromEvent(window, 'beforeinstallprompt');
 

@@ -27,6 +27,8 @@ import { EveryPipe } from './pipes/every.pipe';
 import { MessagingModule } from '@angular/fire/messaging';
 import { initializeApp } from 'firebase/app';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { GroomComponent } from './components/groom/groom.component';
+import { BrideComponent } from './components/bride/bride.component';
 
 // AngularFireModule.initializeApp(environment.firebase);
 const app = initializeApp(environment.firebase);
@@ -47,7 +49,9 @@ const app = initializeApp(environment.firebase);
     PerformanceNightComponent,
     DandiyaComponent,
     MarriageComponent,
-    EveryPipe
+    EveryPipe,
+    GroomComponent,
+    BrideComponent
   ],
   imports: [
     CommonModule,

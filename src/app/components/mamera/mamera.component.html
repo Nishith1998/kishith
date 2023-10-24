@@ -7,11 +7,11 @@
 <div 
     style="background-image: url('https://video-public.canva.com/VADlszFaYhs/v/e67a8ad56c.gif');"
     class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
-    <img class="absolute top-0" [showAfter]="1000" src="https://video-public.canva.com/VADlsxWEKFQ/v/91b6b340f6.gif" />
+    <img class="absolute top-0" [showAfter]="showAfterTime" src="https://video-public.canva.com/VADlsxWEKFQ/v/91b6b340f6.gif" />
     <!-- <img class="absolute top-0" [showAfter]="1000" src="https://video-public.canva.com/VADlszFaYhs/v/e67a8ad56c.gif" /> -->
 
     <div class="flex flex-col items-center">
-        <img class="rightPlayer w-46" [showAfter]="1000" [animations]="'fadeInRightToLeft'" src="assets/mamera-namaste.png" />
-        <img class="leftPlayer w-46" [showAfter]="1000" [animations]="'fadeInLeftToRight'" src="https://media-public.canva.com/7mWYs/MAFdyu7mWYs/1/tl.png" />
+        <img class="rightPlayer w-46" [showAfter]="showAfterTime" [animations]="'fadeInRightToLeft'" src="assets/mamera-namaste.png" />
+        <img class="leftPlayer w-46" [showAfter]="showAfterTime" [animations]="'fadeInLeftToRight'" src="https://media-public.canva.com/7mWYs/MAFdyu7mWYs/1/tl.png" />
     </div>
 </div>
