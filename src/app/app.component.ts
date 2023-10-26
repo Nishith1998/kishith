@@ -3,6 +3,7 @@ import { Observable, filter, fromEvent, mergeMap, take } from 'rxjs';
 import { EVENT_INFO, EventName } from 'src/app/constants';
 import { MainEventsService } from 'src/app/services/main-events.service';
 import { MessagingService } from 'src/app/services/messaging.service';
+import gsap from "gsap";
 
 @Component({
   selector: 'app-root',
@@ -64,6 +65,10 @@ export class AppComponent {
     //     })
     //   )
     //   .subscribe();
+  }
+
+  ngAfterViewInit() {
+
   }
 
   // requestFcmPermission() {

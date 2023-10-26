@@ -11,19 +11,35 @@
 
 <!-- <img alt="couple" class="z-10 bottom-0 right-0 w-full" src="https://media.canva.com/1/image-resize/1/571_437_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS85NnFaMC9NQUZ3eG45NnFaMC8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAAH0C7_X9JDtoXthEndodOle-D15Cq0R3LuuhvV933H0z&exp=1697046043&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAABDMyvj8ANBWbTblFIGbSPaVcw9-R4BW5dYRAKUmGM9v"/> -->
 <!-- <img alt="mandap" class="z-0 fixed inset-0 w-full h-full object-cover" src="https://i.pinimg.com/736x/0c/a9/7e/0ca97eaa6fefe8912ae0b7e532f5fcb6.jpg"/> -->
-<mat-tab-group (selectedTabChange)="onTabChange($event)" preserveContent="true" animationDuration="500"
+<!-- <mat-tab-group (selectedTabChange)="onTabChange($event)" preserveContent="true" animationDuration="0"
     class="absolute bottom-0" headerPosition="below" mat-stretch-tabs="true" mat-align-tabs="center">
     <mat-tab label="Function">
-        <div
-            class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
-            <img [showAfter]="showAfterTime" [animations]="animationType" src="assets/marriage.png">
-        </div>
+        <ng-template matTabContent>
+            <div
+                class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
+                <img [showAfter]="showAfterTime" [animations]="'fadeInRightToLeft'" [restart]="restartA" src="assets/marriage.png">
+            </div>
+        </ng-template>
     </mat-tab>
     <mat-tab label="Food">
+        <ng-template matTabContent>
+
         <div
             class="animated-container relative flex flex-col z-20 bg-top justify-center items-center w-screen h-screen">
-            <img [showAfter]="showAfterTime" [animations]="animationType" src="assets/food.png">
+            <img [showAfter]="showAfterTime" [animations]="'fadeInLeftToRight'" [restart]="!restartA" src="assets/food.png">
         </div>
+    </ng-template>
+
     </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
+<div *ngIf="selectedTab === 'function'" class="animated-container relative flex flex-col z-0 bg-top justify-center items-center w-screen h-screen">
+    <img (onload)="loadingCount = loadingCount + 1" [showAfter]="showAfterTime" [animations]="'fadeInRightToLeft'" src="assets/marriage.png">
+</div>
+<div *ngIf="selectedTab === 'food'" class="animated-container relative flex flex-col z-0 bg-top justify-center items-center w-screen h-screen">
+    <img (onload)="loadingCount = loadingCount + 1" [showAfter]="showAfterTime" [animations]="'fadeInLeftToRight'" src="assets/food.png">
+</div>
+<div class="absolute z-20 bottom-0 left-0 flex justify-center items-center w-full">
+    <button (click)="changeTabTo('function')" class="w-full" [ngClass]="{'!rounded-md !border-t-slate-500 !bg-slate-300': selectedTab === 'function'}" mat-button>Function</button>
+    <button (click)="changeTabTo('food')" class="w-full" [ngClass]="{'!rounded-md !border-t-slate-500 !bg-slate-300': selectedTab === 'food'}" mat-button>Food</button>
+</div>
 <!-- </div> -->

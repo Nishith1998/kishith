@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { fadeInAnimation, staggerRightAnimation } from 'src/app/animations';
 import { gsap } from 'gsap';
 import SplitType from 'split-type';
-import { BLUR_AFTER_TIME, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
+import { BLUR_AFTER_TIME, EVENT_INFO_TEMPLATE_TIME, EventName, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
+import { MainEventsService } from 'src/app/services/main-events.service';
 
 @Component({
   selector: 'app-mandvo',
@@ -14,6 +15,9 @@ export class MandvoComponent implements OnInit {
   showAfterTime = SHOW_AFTER_TIME;
 
   imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
+  
+  constructor(private eventService: MainEventsService) { }
+  
   ngOnInit() {
     const ourText = new SplitType('div.text-3xl', { types: 'chars' });
     const chars = ourText.chars;
@@ -64,6 +68,14 @@ export class MandvoComponent implements OnInit {
     //     { filter: 'blur(3px)', duration: 2 }
     //   );
     // }, 2000);
+    setTimeout(() => {
+      this.eventService.eventDetails$.next(EventName.mandapRopan);
+    }, EVENT_INFO_TEMPLATE_TIME);
+
     blurAfter(BLUR_AFTER_TIME);
+  }
+
+  ngOnDestroy() {
+    this.eventService.eventDetails$.next(null);
   }
 }

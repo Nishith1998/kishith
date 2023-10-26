@@ -1,7 +1,8 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { BLUR_AFTER_TIME, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
+import { BLUR_AFTER_TIME, EVENT_INFO_TEMPLATE_TIME, EventName, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
+import { MainEventsService } from 'src/app/services/main-events.service';
 
 @Component({
   selector: 'app-marriage',
@@ -17,20 +18,40 @@ import { BLUR_AFTER_TIME, SHOW_AFTER_TIME, blurAfter } from 'src/app/constants';
   ]
 })
 export class MarriageComponent {
-  animationType: string = 'fadeInRightToLeft';
   showAfterTime = SHOW_AFTER_TIME;
+  selectedTab: 'function' | 'food' = 'function';
+  loadingCount: number = 0;
+
+  constructor(private eventService: MainEventsService) {}
+
 
   ngOnInit() {
-    blurAfter(BLUR_AFTER_TIME);
+    // setTimeout(() => {
+    //   this.eventService.eventDetails$.next(EventName.dandiya);
+    // }, EVENT_INFO_TEMPLATE_TIME);
+    // blurAfter(BLUR_AFTER_TIME);
+    this.changeTabTo('function');
   }
 
-  onTabChange(event: MatTabChangeEvent) {
-    console.log("value: ", event);
-    this.animationType = 'fadeInRightToLeft';
-    // const tabAnimation = event.tab.textLabel; // Assuming your tab labels match the animation types
-    // const imgElement = event.tab?.querySelector('[showAfter]');
-    // if (imgElement) {
-    //   imgElement.setAttribute('animations', tabAnimation);
-    // }
+  changeTabTo(value: 'function' | 'food') {
+    this.eventService.eventDetails$.next(null);
+    this.selectedTab = value;
+    if(value === 'function') {
+      setTimeout(() => {
+        this.eventService.eventDetails$.next(EventName.marriageFunction);
+      }, EVENT_INFO_TEMPLATE_TIME);
+      blurAfter(BLUR_AFTER_TIME);
+    } else {
+      setTimeout(() => {
+        this.eventService.eventDetails$.next(EventName.marriageFood);
+      }, EVENT_INFO_TEMPLATE_TIME);
+      blurAfter(BLUR_AFTER_TIME);
+    }
+
+
+  }
+
+  ngOnDestroy() {
+    this.eventService.eventDetails$.next(null);
   }
 }
