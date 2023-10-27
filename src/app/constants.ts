@@ -42,7 +42,36 @@ export const EVENT_INFO: {[key: string]: any} = {
     "Venue": "Satyam farm",
     "Date": '06/12/2023',
     // "Dress code": 'Sela'
-  }
+  },
+  [EventName.mandapRopan]: {
+    // Name: 'Sanji',
+    "Time": '3:00 pm',
+    "Venue": "Satyam farm",
+    "Date": '06/12/2023',
+    // "Dress code": 'Sela'
+  },
+  [EventName.marriageFunction]: {
+    // Name: 'Sanji',
+    "Jaan Aagman": '2:15 pm',
+    "Mangal Fera": '7:15 pm',
+    "Venue": "Satyam farm",
+    "Date": '07/12/2023',
+    // "Dress code": 'Sela'
+  },
+  [EventName.marriageFood]: {
+    // Name: 'Sanji',
+    "Time": "7:30 pm",
+    "Venue": "Satyam farm",
+    "Date": '07/12/2023',
+    // "Dress code": 'Sela'
+  },
+  [EventName.dandiya]: {
+    // Name: 'Sanji',
+    "Time": "7:00 pm",
+    "Venue": "Satyam farm",
+    "Date": '06/12/2023',
+    // "Dress code": 'Sela'
+  },
 }
 
 export const BRIDE_EVENT_LIST: EventObj[] = [

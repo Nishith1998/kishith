@@ -7,6 +7,7 @@ import {
   HostBinding,
 } from '@angular/core';
 import gsap from 'gsap';
+import SplitType from 'split-type';
 
 @Directive({
   selector: '[showAfter]',
@@ -32,7 +33,7 @@ export class ShowAfterDirective implements OnInit {
 
   ngOnChanges(change: any) {
     console.log('change: ', change);
-    if (change['restart'].currentValue === true && this.animationObj) {
+    if (change['restart'] && change['restart'].currentValue === true && this.animationObj) {
       this.animationObj.reversed(false);
       this.animationObj.seek(0);
     }
@@ -47,6 +48,7 @@ export class ShowAfterDirective implements OnInit {
   // }
 
   applyAnimations(animationType: string) {
+    let ourText, chars;
     switch (animationType) {
       case 'fadeInLeftToRight':
         this.animationObj = gsap.fromTo(
@@ -88,6 +90,39 @@ export class ShowAfterDirective implements OnInit {
           duration: 1,
           ease: 'power2.out',
         });
+        break;
+      case 'chars':
+        ourText = new SplitType(this.el.nativeElement, { types: 'chars' });
+        chars = ourText.chars;
+        const splitTextTimeline = gsap.timeline();
+
+        this.animationObj = splitTextTimeline.from(chars, {
+          duration: 2,
+          scale: 4,
+          autoAlpha: 0,
+          rotationX: -180,
+          transformOrigin: "100% 50%",
+          ease: "back",
+          stagger: 0.02
+        });
+        break;
+      case 'charsFadeUp':
+        ourText = new SplitType(this.el.nativeElement, { types: 'chars' });
+        chars = ourText.chars;
+        this.animationObj = gsap.fromTo(
+          chars,
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 2,
+            ease: 'power4.out',
+          }
+        );
         break;
     }
   }

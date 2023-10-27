@@ -25,11 +25,11 @@
     </div>
   </div>
 </div> -->
-<div *ngIf="eventName" [showAfter]="0" [animations]="'stagger'" class="fixed inset-0 flex items-center justify-center z-10">
+<div *ngIf="eventName" [showAfter]="0" [animations]="'stagger'" class="fixed inset-0 flex items-center justify-center z-30">
     <mat-card class="flex justify-center items-center bg-cover w-2/3 h-2/3 lg:w-3/4 lg:h-3/4"  style="background-image: url('assets/eventInfobg.jpeg');">
-      <mat-card-title class="!mb-8"> {{eventName}} </mat-card-title>
+      <mat-card-title [showAfter]="0" [animations]="'charsFadeUp'" class="card-title !mb-8"> {{eventName}} </mat-card-title>
       <mat-card-content> 
-        <div *ngFor="let item of eventInfo | keyvalue: retureZero" class="grid grid-cols-2">
+        <div [showAfter]="0" [animations]="'chars'" *ngFor="let item of eventInfo | keyvalue: retureZero" class="grid grid-cols-2">
           <div>{{item.key }}</div>
           <div>{{item.value }}</div>
         </div>

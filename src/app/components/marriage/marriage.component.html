@@ -38,7 +38,7 @@
 <div *ngIf="selectedTab === 'food'" class="animated-container relative flex flex-col z-0 bg-top justify-center items-center w-screen h-screen">
     <img (onload)="loadingCount = loadingCount + 1" [showAfter]="showAfterTime" [animations]="'fadeInLeftToRight'" src="assets/food.png">
 </div>
-<div class="absolute z-20 bottom-0 left-0 flex justify-center items-center w-full">
+<div class="absolute z-40 bottom-0 left-0 flex justify-center items-center w-full">
     <button (click)="changeTabTo('function')" class="w-full" [ngClass]="{'!rounded-md !border-t-slate-500 !bg-slate-300': selectedTab === 'function'}" mat-button>Function</button>
     <button (click)="changeTabTo('food')" class="w-full" [ngClass]="{'!rounded-md !border-t-slate-500 !bg-slate-300': selectedTab === 'food'}" mat-button>Food</button>
 </div>
