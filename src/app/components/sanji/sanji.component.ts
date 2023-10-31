@@ -15,8 +15,9 @@ export class SanjiComponent implements OnInit, OnDestroy {
 
   // imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
   showAfterTime = SHOW_AFTER_TIME;
+  timer: any;
   ngOnInit() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.eventService.eventDetails$.next(EventName.sanji);
     }, EVENT_INFO_TEMPLATE_TIME);
     
@@ -25,6 +26,7 @@ export class SanjiComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 
 }
