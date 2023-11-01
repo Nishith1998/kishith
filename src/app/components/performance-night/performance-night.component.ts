@@ -13,12 +13,13 @@ import { MainEventsService } from 'src/app/services/main-events.service';
 export class PerformanceNightComponent {
   // imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
   showAfterTime = SHOW_AFTER_TIME;
+  timer!: ReturnType<typeof setTimeout>;
 
   constructor(private eventService: MainEventsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.eventService.eventDetails$.next(EventName.sanji);
+    this.timer = setTimeout(() => {
+      this.eventService.eventDetails$.next(EventName.performanceNight);
     }, EVENT_INFO_TEMPLATE_TIME);
 
     blurAfter(BLUR_AFTER_TIME);
@@ -33,5 +34,6 @@ export class PerformanceNightComponent {
 
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 }

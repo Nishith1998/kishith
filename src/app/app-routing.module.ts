@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { SampleEventComponent } from './components/sample-event/sample-event.component';
+// import { SampleEventComponent } from './components/sample-event/sample-event.component';
 import { MandvoComponent } from './components/mandvo/mandvo.component';
 import { SanjiComponent } from 'src/app/components/sanji/sanji.component';
 import { MameraComponent } from 'src/app/components/mamera/mamera.component';
@@ -41,9 +41,6 @@ const routes: Routes = [
   },
   {
     path: 'marriage', component: MarriageComponent
-  },
-  {
-    path: 'sampleEvent', component: SampleEventComponent
   }
 ];
 

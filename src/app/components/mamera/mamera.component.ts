@@ -9,16 +9,18 @@ import { MainEventsService } from 'src/app/services/main-events.service';
 })
 export class MameraComponent {
   showAfterTime = SHOW_AFTER_TIME;
+  timer!: ReturnType<typeof setTimeout>;
 
   constructor(private eventService: MainEventsService) { }
 
   ngOnInit() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.eventService.eventDetails$.next(EventName.mamera);
     }, EVENT_INFO_TEMPLATE_TIME);
     blurAfter(BLUR_AFTER_TIME);
   }
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 }

@@ -15,7 +15,8 @@ export class MandvoComponent implements OnInit {
   showAfterTime = SHOW_AFTER_TIME;
 
   imgPath: string = "https://st4.depositphotos.com/13045080/20173/v/1600/depositphotos_201735142-stock-illustration-floral-frame-wedding-invitation-greeting.jpg"
-  
+  timer!: ReturnType<typeof setTimeout>;
+
   constructor(private eventService: MainEventsService) { }
   
   ngOnInit() {
@@ -68,7 +69,7 @@ export class MandvoComponent implements OnInit {
     //     { filter: 'blur(3px)', duration: 2 }
     //   );
     // }, 2000);
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.eventService.eventDetails$.next(EventName.mandapRopan);
     }, EVENT_INFO_TEMPLATE_TIME);
 
@@ -77,5 +78,6 @@ export class MandvoComponent implements OnInit {
 
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 }

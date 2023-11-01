@@ -47,6 +47,7 @@ import { environment } from 'src/environments/environment';
   ],
 })
 export class HomeComponent {
+  mLoc: boolean = false;
   eventList: EventObj[] = [
     {
       label: 'Bride',
@@ -61,7 +62,7 @@ export class HomeComponent {
     {
       label: 'Groom',
       isLoading: true,
-      routePath: '/groom',
+      routePath: '/groomP',
       svgPath:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4twH8sS8wurrXHABS8t_xM_xzekLXJtf6-g&usqp=CAU',
       backgroundImage:

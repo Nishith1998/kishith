@@ -15,11 +15,12 @@ import { MainEventsService } from 'src/app/services/main-events.service';
 })
 export class DandiyaComponent {
   showAfterTime = SHOW_AFTER_TIME;
+  timer!: ReturnType<typeof setTimeout>;
 
   constructor(private eventService: MainEventsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
+    this.timer = setTimeout(() => {
       this.eventService.eventDetails$.next(EventName.dandiya);
     }, EVENT_INFO_TEMPLATE_TIME);
     
@@ -27,5 +28,6 @@ export class DandiyaComponent {
   }
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 }

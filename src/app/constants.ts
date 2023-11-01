@@ -25,27 +25,27 @@ export const EVENT_INFO: {[key: string]: any} = {
   [EventName.sanji]: {
     // Name: 'Sanji',
     "Time": '3:00 pm',
-    "Venue": "Let's Eat banquet hall, Nr Sastri Nagar ",
+    "Venue": "Let's Eat banquet hall, Nr Sastri Nagar",
     "Date": '05/12/2023',
     "Dress code": 'Sela'
   },
   [EventName.performanceNight]: {
     // Name: 'Sanji',
-    "Time": '5:00 pm',
-    "Venue": "Satyam farm",
-    "Date": '06/12/2023',
+    "Time": '9:00 pm',
+    "Venue": "Let's Eat banquet hall, Nr Sastri Nagar",
+    "Date": '05/12/2023',
     // "Dress code": 'Sela'
   },
   [EventName.mamera]: {
     // Name: 'Sanji',
-    "Time": '5:00 pm',
+    "Time": '4:00 pm',
     "Venue": "Satyam farm",
     "Date": '06/12/2023',
     // "Dress code": 'Sela'
   },
   [EventName.mandapRopan]: {
     // Name: 'Sanji',
-    "Time": '3:00 pm',
+    "Time": '2:00 pm',
     "Venue": "Satyam farm",
     "Date": '06/12/2023',
     // "Dress code": 'Sela'
@@ -67,7 +67,7 @@ export const EVENT_INFO: {[key: string]: any} = {
   },
   [EventName.dandiya]: {
     // Name: 'Sanji',
-    "Time": "7:00 pm",
+    "Time": "8:00 pm",
     "Venue": "Satyam farm",
     "Date": '06/12/2023',
     // "Dress code": 'Sela'

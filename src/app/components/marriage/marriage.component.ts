@@ -21,6 +21,8 @@ export class MarriageComponent {
   showAfterTime = SHOW_AFTER_TIME;
   selectedTab: 'function' | 'food' = 'function';
   loadingCount: number = 0;
+  timer!: ReturnType<typeof setTimeout>;
+  // timerFood!: ReturnType<typeof setTimeout>;
 
   constructor(private eventService: MainEventsService) {}
 
@@ -36,13 +38,16 @@ export class MarriageComponent {
   changeTabTo(value: 'function' | 'food') {
     this.eventService.eventDetails$.next(null);
     this.selectedTab = value;
+    if(this.timer) {
+      clearTimeout(this.timer);
+    }
     if(value === 'function') {
-      setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.eventService.eventDetails$.next(EventName.marriageFunction);
       }, EVENT_INFO_TEMPLATE_TIME);
       blurAfter(BLUR_AFTER_TIME);
     } else {
-      setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.eventService.eventDetails$.next(EventName.marriageFood);
       }, EVENT_INFO_TEMPLATE_TIME);
       blurAfter(BLUR_AFTER_TIME);
@@ -53,5 +58,6 @@ export class MarriageComponent {
 
   ngOnDestroy() {
     this.eventService.eventDetails$.next(null);
+    clearTimeout(this.timer);
   }
 }
