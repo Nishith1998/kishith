@@ -29,6 +29,7 @@ import { initializeApp } from 'firebase/app';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { GroomComponent } from './components/groom/groom.component';
 import { BrideComponent } from './components/bride/bride.component';
+import { HaldiComponent } from './components/haldi/haldi.component';
 
 // AngularFireModule.initializeApp(environment.firebase);
 const app = initializeApp(environment.firebase);
@@ -47,7 +48,8 @@ const app = initializeApp(environment.firebase);
     MarriageComponent,
     EveryPipe,
     GroomComponent,
-    BrideComponent
+    BrideComponent,
+    HaldiComponent
   ],
   imports: [
     CommonModule,

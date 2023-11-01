@@ -1,5 +1,5 @@
-import { EventObj } from "src/app/types";
-import gsap from "gsap";
+import { EventObj } from 'src/app/types';
+import gsap from 'gsap';
 
 export const SHOW_AFTER_TIME = 1000;
 export const BLUR_AFTER_TIME = 2000;
@@ -16,63 +16,89 @@ export enum EventName {
   mandapRopan = 'Mandap Ropan',
   dandiya = 'Dandiya',
   marriageFunction = 'Hast Melap',
-  marriageFood = 'Lunch'
+  marriageFood = 'Dinner',
+  haldi = 'Haldi',
 }
-// location for each 
+// location for each
 // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14768.693037492292!2d70.74684126217386!3d22.27142578232689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cbb241916cf7%3A0x30aa84d4135083d6!2sLet&#39;s%20EAT%20RESTAURANT%20AND%20BANQUET!5e0!3m2!1sen!2sin!4v1698163475828!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-export const EVENT_INFO: {[key: string]: any} = {
+export const EVENT_INFO_BRIDE: { [key: string]: any } = {
   [EventName.sanji]: {
-    // Name: 'Sanji',
-    "Time": '3:00 pm',
-    "Venue": "Let's Eat banquet hall, Nr Sastri Nagar",
-    "Date": '05/12/2023',
-    "Dress code": 'Sela'
+    Time: '3:00 pm',
+    Venue: "Let's Eat banquet hall, Nr Sastri Nagar",
+    Date: '05/12/2023',
   },
   [EventName.performanceNight]: {
-    // Name: 'Sanji',
-    "Time": '9:00 pm',
-    "Venue": "Let's Eat banquet hall, Nr Sastri Nagar",
-    "Date": '05/12/2023',
-    // "Dress code": 'Sela'
-  },
-  [EventName.mamera]: {
-    // Name: 'Sanji',
-    "Time": '4:00 pm',
-    "Venue": "Satyam farm",
-    "Date": '06/12/2023',
-    // "Dress code": 'Sela'
+    Time: '9:00 pm',
+    Venue: "Let's Eat banquet hall, Nr Sastri Nagar",
+    Date: '05/12/2023',
   },
   [EventName.mandapRopan]: {
-    // Name: 'Sanji',
-    "Time": '2:00 pm',
-    "Venue": "Satyam farm",
-    "Date": '06/12/2023',
-    // "Dress code": 'Sela'
+    Time: '2:00 pm',
+    Venue: 'Satyam farm',
+    Date: '06/12/2023',
   },
-  [EventName.marriageFunction]: {
-    // Name: 'Sanji',
-    "Jaan Aagman": '2:15 pm',
-    "Mangal Fera": '7:15 pm',
-    "Venue": "Satyam farm",
-    "Date": '07/12/2023',
-    // "Dress code": 'Sela'
-  },
-  [EventName.marriageFood]: {
-    // Name: 'Sanji',
-    "Time": "7:30 pm",
-    "Venue": "Satyam farm",
-    "Date": '07/12/2023',
-    // "Dress code": 'Sela'
+  [EventName.mamera]: {
+    Time: '4:00 pm',
+    Venue: 'Satyam farm',
+    Date: '06/12/2023',
   },
   [EventName.dandiya]: {
-    // Name: 'Sanji',
-    "Time": "8:00 pm",
-    "Venue": "Satyam farm",
-    "Date": '06/12/2023',
-    // "Dress code": 'Sela'
+    Time: '8:00 pm',
+    Venue: 'Satyam farm',
+    Date: '06/12/2023',
   },
-}
+  [EventName.marriageFunction]: {
+    'Jaan Aagman': '2:15 pm',
+    'Mangal Fera': '7:15 pm',
+    Venue: 'Satyam farm',
+    Date: '07/12/2023',
+  },
+  [EventName.marriageFood]: {
+    Time: '7:30 pm',
+    Venue: 'Satyam farm',
+    Date: '07/12/2023',
+  }
+};
+
+export const EVENT_INFO_GROOM: { [key: string]: any } = {
+  [EventName.sanji]: {
+    Time: '3:30 pm',
+    Venue: 'Bhayiya hall',
+    Date: '06/12/2023',
+  },
+  [EventName.mandapRopan]: {
+    Time: '4:30 pm',
+    Venue: 'Bhayiya hall',
+    Date: '06/12/2023',
+  },
+  [EventName.mamera]: {
+    Time: '5:30 pm',
+    Venue: 'Bhayiya hall',
+    Date: '06/12/2023',
+  },
+  [EventName.haldi]: {
+    Time: '6:30 pm',
+    Venue: 'Bhayiya hall',
+    Date: '06/12/2023',
+  },
+  [EventName.dandiya]: {
+    Time: '9:00 pm',
+    Venue: 'Bhayiya hall',
+    Date: '06/12/2023',
+  },
+  [EventName.marriageFunction]: {
+    'Jaan Aagman': '2:15 pm',
+    'Mangal Fera': '7:15 pm',
+    Venue: 'Satyam farm',
+    Date: '07/12/2023',
+  },
+  [EventName.marriageFood]: {
+    Time: '7:30 pm',
+    Venue: 'Satyam farm',
+    Date: '07/12/2023',
+  },
+};
 
 export const BRIDE_EVENT_LIST: EventObj[] = [
   {
@@ -199,7 +225,7 @@ export const GROOM_EVENT_LIST: EventObj[] = [
 let animation: any;
 let timer: any;
 export const blurAfter = (miliSec: number) => {
-  if(animation) {
+  if (animation) {
     animation.kill();
     clearTimeout(timer);
     // animation.reversed(false);
@@ -213,4 +239,4 @@ export const blurAfter = (miliSec: number) => {
       { filter: 'blur(3px)', duration: 2 }
     );
   }, miliSec);
-}
+};

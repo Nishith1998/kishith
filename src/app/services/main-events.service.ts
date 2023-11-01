@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class MainEventsService {
 
   eventDetails$: Subject<any> = new Subject();
+  eventInfo$: Subject<"bride" | "groom"> = new Subject();
 
   constructor() { 
 

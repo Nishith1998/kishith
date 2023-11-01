@@ -10,13 +10,18 @@
   <div *ngIf="!message;">
     No Message Arrived
   </div> -->
-<div class="flex flex-col justify-between">
-    <iframe class="p-4" src="https://www.youtube.com/embed/VGjvZRerP58"
+<div class="flex flex-col justify-between items-center p-4">
+    <video class="" controls>
+        <source src="assets/Nishith & Kirti.mp4" type="video/mp4">
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+        Your browser does not support the video tag.
+      </video>
+    <!-- <iframe class="p-4" src="https://www.youtube.com/embed/VGjvZRerP58"
         title="Tere Vaaste | Lyrical | Zara Hatke Zara Bachke | Vicky, Sara Ali K, Varun J, Sachin-Jigar, Amitabh B"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
-    </iframe>
+    </iframe> -->
 </div>
 <!-- <div *ngIf="eventList | every">
 Loading!!
@@ -26,6 +31,7 @@ Loading!!
         <!-- (click)="handleEventClick(item.routePath)" -->
         <div *ngFor="let item of eventList" @staggerRight
             [routerLink]="item.routePath"
+            (click)="setEventInfo(item.routePath)"
             class="relative flex justify-center items-center hover:animate-pulse rounded-md bg-cover bg-no-repeat bg-center bg-gradient-to-bl from-blue-200 to-blue-600  p-4 h-40" style="background-image: url({{item.backgroundImage}})"> <!-- bg-gradient-to-bl from-blue-200 to-blue-600-->
             {{item.label}}
             <!-- <img class="" [src]="item.svgPath"> -->

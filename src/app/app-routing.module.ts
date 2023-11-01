@@ -10,6 +10,7 @@ import { DandiyaComponent } from 'src/app/components/dandiya/dandiya.component';
 import { PerformanceNightComponent } from 'src/app/components/performance-night/performance-night.component';
 import { BrideComponent } from 'src/app/components/bride/bride.component';
 import { GroomComponent } from 'src/app/components/groom/groom.component';
+import { HaldiComponent } from 'src/app/components/haldi/haldi.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path: 'marriage', component: MarriageComponent
+  },
+  {
+    path: 'haldi', component: HaldiComponent
   }
 ];
 
