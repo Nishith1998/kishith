@@ -64,27 +64,27 @@ export const EVENT_INFO_BRIDE: { [key: string]: any } = {
 export const EVENT_INFO_GROOM: { [key: string]: any } = {
   [EventName.sanji]: {
     Time: '3:30 pm',
-    Venue: 'Bhayiya hall',
+    Venue: 'Bhatiya Boarding',
     Date: '06/12/2023',
   },
   [EventName.mandapRopan]: {
     Time: '4:30 pm',
-    Venue: 'Bhayiya hall',
+    Venue: 'Bhatiya Boarding',
     Date: '06/12/2023',
   },
   [EventName.mamera]: {
     Time: '5:30 pm',
-    Venue: 'Bhayiya hall',
+    Venue: 'Bhatiya Boarding',
     Date: '06/12/2023',
   },
   [EventName.haldi]: {
     Time: '6:30 pm',
-    Venue: 'Bhayiya hall',
+    Venue: 'Bhatiya Boarding',
     Date: '06/12/2023',
   },
   [EventName.dandiya]: {
     Time: '9:00 pm',
-    Venue: 'Bhayiya hall',
+    Venue: 'Bhatiya Boarding',
     Date: '06/12/2023',
   },
   [EventName.marriageFunction]: {

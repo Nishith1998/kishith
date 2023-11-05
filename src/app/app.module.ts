@@ -30,6 +30,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { GroomComponent } from './components/groom/groom.component';
 import { BrideComponent } from './components/bride/bride.component';
 import { HaldiComponent } from './components/haldi/haldi.component';
+import { ImageModule } from 'primeng/image'; 
 
 // AngularFireModule.initializeApp(environment.firebase);
 const app = initializeApp(environment.firebase);
@@ -58,6 +59,7 @@ const app = initializeApp(environment.firebase);
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    ImageModule,
     MessagingModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
